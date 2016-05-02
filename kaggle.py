@@ -22,7 +22,7 @@ def rf(x_train, x_test, y_train, y_test):
 
 def rf_quiz(x_train, y_train, x_test, output):
 	print 'training random forest...'
-	clf = RandomForestClassifier(n_estimators=30, random_state=40)
+	clf = RandomForestClassifier(n_estimators=100, random_state=40)
 	clf.fit(x_train, y_train)
 	print 'done.'
 
@@ -214,7 +214,7 @@ def main(argv):
 	categorical_features = [feature_0, feature_5, feature_7, feature_8, feature_9, 
 	feature_14, feature_16, feature_17, feature_56, feature_57]
 
-	print 'extracting data from data.csv...'
+	print 'extracting data from ' + argv[0] + '...'
 	fo = open(argv[0], "r")
 	s = fo.read()
 	fo.close()
@@ -234,7 +234,7 @@ def main(argv):
 
 	x_train, y_train = process_train_data(data, categorical_features)
 
-	print 'extracting data from quiz.csv...'
+	print 'extracting data from ' + argv[1] + '...'
 	fo = open(argv[1], "r")
 	s = fo.read()
 	fo.close()
