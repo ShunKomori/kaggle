@@ -22,7 +22,7 @@ def rf(x_train, x_test, y_train, y_test):
 
 def rf_quiz(x_train, y_train, x_test, output):
 	print 'training random forest...'
-	clf = RandomForestClassifier(n_estimators=100, random_state=40)
+	clf = RandomForestClassifier(n_estimators=300, random_state=40)
 	clf.fit(x_train, y_train)
 	print 'done.'
 
